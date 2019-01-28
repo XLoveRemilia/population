@@ -1,0 +1,360 @@
+//mvm_sequoia_rc3a
+//Expert
+//Forest Catastrophe
+#base robot_remilia_addicted_madness.pop
+//////////////////////////////////////
+//
+//
+//
+//
+//
+//////////////////////////////////////
+population
+{
+	StartingCurrency	600
+	CanBotsAttackWhileInSpawnRoom no
+    RespawnWaveTime 		6
+    Wave
+    {
+		StartWaveOutput
+		{
+			Target wave_start_relay_classic
+			Action Trigger
+		}a//mvm_sequoia_rc3a
+//Expert
+//Forest Catastrophe
+#base robot_remilia_addicted_madness.pop
+//////////////////////////////////////
+//
+//
+//
+//
+//
+//////////////////////////////////////
+population
+{
+	StartingCurrency	600
+	CanBotsAttackWhileInSpawnRoom no
+    RespawnWaveTime 		6
+    Wave
+    {
+		StartWaveOutput
+		{
+			Target wave_start_relay_classic
+			Action Trigger
+		}
+		DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+		WaveSpawn
+        {
+            Name        1Asmall
+            TotalCurrency        100
+            TotalCount        30
+            MaxActive        15
+            SpawnCount        5
+            Where        spawnbot
+            WaitBetweenSpawns        6
+			RandomChoice
+			{
+				TFBot
+				{
+					Template T_TFBot_Addicted_Soldier
+					Skill	Hard
+				}
+				TFBot
+				{
+					Template T_TFBot_Addicted_Soldier
+					Skill	Hard
+				}
+				TFBot
+				{
+					Template T_TFGateBot_Soldier_Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1A
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	2
+			Where	spawnbot_right
+			WaitBeforestarting	5
+			WaitBetweenSpawns	12
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Boxing_Heavy
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1B
+			WaitForAllDead	1Asmall
+			TotalCurrency        100
+            TotalCount	63
+            MaxActive   9 
+            SpawnCount	9
+            Where        spawnbot_left
+			TFBot
+			{
+				Template 	T_TFBot_Scout_Melee
+			}	
+		}
+		WaveSpawn
+		{
+			Name	1Bgiant
+			WaitForAllDead	1A
+			TotalCurrency	200
+			TotalCount	9
+			MaxActive	9
+			SpawnCount	3
+			Where	spawnbot_right
+			WaitBeforestarting	5
+			WaitBetweenSpawns	15
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFGateBot_Giant_Soldier
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1C
+			WaitForAllSpawned	1B
+			TotalCurrency	100
+			TotalCount	8
+			MaxActive	8
+			SpawnCount	4
+			Where	spawnbot_left
+			WaitBetweenSpawns	6
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Fist
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_SlowRecharge
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1C
+			WaitForAllSpawned	1B
+			TotalCurrency	100
+			TotalCount	8
+			MaxActive	8
+			SpawnCount	4
+			Where	spawnbot_right
+			WaitBetweenSpawns	6
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Fist
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_SlowRecharge
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1C
+			WaitForAllDead	1Bgiant
+			TotalCurrency	100
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforestarting	7
+			TFBot
+			{
+				Template	T_TFBot_Giant_Scout_Baseball_Armored
+			}
+		}
+	}
+}
+		DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+		WaveSpawn
+        {
+            Name        1Asmall
+            TotalCurrency        100
+            TotalCount        30
+            MaxActive        15
+            SpawnCount        5
+            Where        spawnbot
+            WaitBetweenSpawns        6
+			RandomChoice
+			{
+				TFBot
+				{
+					Template T_TFBot_Addicted_Soldier
+					Skill	Hard
+				}
+				TFBot
+				{
+					Template T_TFBot_Addicted_Soldier
+					Skill	Hard
+				}
+				TFBot
+				{
+					Template T_TFGateBot_Soldier_Hard
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1A
+			TotalCurrency	200
+			TotalCount	4
+			MaxActive	4
+			SpawnCount	2
+			Where	spawnbot_right
+			WaitBeforestarting	5
+			WaitBetweenSpawns	12
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Boxing_Heavy
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1B
+			WaitForAllDead	1Asmall
+			TotalCurrency        100
+            TotalCount	63
+            MaxActive   9 
+            SpawnCount	9
+            Where        spawnbot_left
+			TFBot
+			{
+				Template 	T_TFBot_Scout_Melee
+			}	
+		}
+		WaveSpawn
+		{
+			Name	1Bgiant
+			WaitForAllDead	1A
+			TotalCurrency	200
+			TotalCount	9
+			MaxActive	9
+			SpawnCount	3
+			Where	spawnbot_right
+			WaitBeforestarting	5
+			WaitBetweenSpawns	15
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFGateBot_Giant_Soldier
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_QuickUber
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1C
+			WaitForAllDead	1Bgiant
+			WaitForAllSpawned	1B
+			TotalCurrency	100
+			TotalCount	8
+			MaxActive	8
+			SpawnCount	4
+			Where	spawnbot_left
+			WaitBetweenSpawns	6
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Fist
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_SlowRecharge
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1C
+			WaitForAllDead	1Bgiant
+			WaitForAllSpawned	1B
+			TotalCurrency	100
+			TotalCount	8
+			MaxActive	8
+			SpawnCount	4
+			Where	spawnbot_right
+			WaitBetweenSpawns	6
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Heavyweapons_Fist
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_SlowRecharge
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	1C
+			WaitForAllDead	1Bgiant
+			WaitForAllSpawned	1B
+			TotalCurrency	100
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforestarting	7
+			TFBot
+			{
+				Template	T_TFBot_Giant_Scout_Baseball_Armored
+			}
+		}
+	}
+}

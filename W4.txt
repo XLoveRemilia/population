@@ -1,0 +1,183 @@
+Wave
+    {
+		StartWaveOutput
+		{
+			Target wave_start_relay
+			Action Trigger
+		}
+		DoneOutput
+        {
+            Target wave_finished_relay
+            Action Trigger
+        }
+		WaveSpawn
+        {
+            Name        4A
+            TotalCurrency        100
+            TotalCount        3
+            MaxActive         3
+            SpawnCount        1
+            Where        spawnbot
+			WaitBeforestarting	5
+			WaitBetweenSpawns	7
+			TFBot
+			{
+				Template	T_TFBot_Giant_Scout_Bonk
+			}
+		}
+		WaveSpawn
+        {
+            Name        4A
+            TotalCurrency        50
+            TotalCount       12
+            MaxActive        9
+            SpawnCount       3
+            Where        spawnbot
+			WaitBetweenSpawns	6
+			TFBot
+			{
+				Template	T_TFBot_Soldier_Extended_Buff_Banner
+			}
+		}
+		WaveSpawn
+        {
+            Name        4A
+            TotalCurrency        50
+            TotalCount       16
+            MaxActive        12
+            SpawnCount       4
+            Where        spawnbot
+			WaitBetweenSpawns	6
+			TFBot
+			{
+				Template	T_TFGateBot_Demo_Burst_Normal
+			}
+		}
+		WaveSpawn
+		{
+			Name	TANK
+			WaitForAllDead	4A
+			TotalCurrency	200
+			TotalCount	3
+			MaxActive	3
+			SpawnCount	1
+			WaitBetweenSpawns	20
+			Tank
+			{
+				Health 25000
+				Speed 65
+				Name "tankboss"
+				StartingPathTrackNode "tank_path_a_1"
+				OnKilledOutput                                  
+				{
+					Target boss_dead_relay
+					Action Trigger                         
+				}
+				OnBombDroppedOutput                             
+				{
+					Target boss_deploy_relay 
+					Action Trigger                         
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	4B
+			WaitForAllDead	4A
+			TotalCurrency	100
+			TotalCount	32
+			MaxActive	21
+			SpawnCount	3
+			WaitBetweenSpawns	20
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFGateBot_Heavy_Hard
+				}
+				TFBot
+				{
+					Template	T_TFGateBot_Heavy_Hard
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_BigHeal
+				}
+			}
+		}
+		WaveSpawn
+		{
+			Name	4C
+			WaitForAllDead	4B
+			TotalCurrency	200
+			TotalCount	16
+			MaxActive	16
+			SpawnCount	4
+			WaitBetweenSpawns	15
+			Squad
+			{
+				TFBot
+				{
+					Template	T_TFBot_Giant_Heavyweapons_Deflector
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_BigHeal
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_BigHeal
+				}
+				TFBot
+				{
+					Template	T_TFBot_Medic_BigHeal
+				}
+				
+			}
+		}
+		WaveSpawn
+		{
+			Name	4C
+			WaitForAllDead	4D
+			TotalCurrency	50
+			TotalCount	50
+			MaxActive	4
+			SpawnCount	2
+			WaitBetweenSpawns	8
+			Support 1
+			TFBot
+			{
+				Template	T_TFBot_Soldier_Extended_Buff_Banner
+			}
+		}
+		WaveSpawn
+		{
+			Name	4D
+			WaitForAllDead	4C
+			TotalCurrency	50
+			TotalCount	50
+			MaxActive	4
+			SpawnCount	2
+			WaitBetweenSpawns	6
+			Support 1
+			TFBot
+			{
+				Template	T_TFBot_Soldier_Extended_Buff_Banner
+			}
+		}
+		WaveSpawn
+		{
+			Name	4D
+			WaitForAllDead	4C
+			TotalCurrency	100
+			TotalCount	50
+			MaxActive	8
+			SpawnCount	4
+			WaitBetweenSpawns	6
+			Support 1
+			TFBot
+			{
+				Template	T_TFBot_Demo_Burst
+			}
+		}
+	}

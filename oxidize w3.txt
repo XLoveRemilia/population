@@ -1,0 +1,343 @@
+Wave
+        {               
+                StartWaveOutput
+                {
+                        Target wave_start_relay_classic
+                        Action Trigger
+                }
+                DoneOutput
+                {
+                        Target wave_finished_relay
+                        Action Trigger
+                }
+				WaveSpawn
+                {
+                        Name        3A
+                        TotalCurrency        100
+                        TotalCount	1
+                        SpawnCount	1
+                        Where        spawnbot
+                        WaitBeforeStarting        30
+                        Tank
+                        {
+                                Health        30000
+                                Name        TankBoss
+                                Speed        65
+                                StartingPathTrackNode        tank_path_a_10                                
+								OnBombDroppedOutput
+                                {
+                                        Target        boss_deploy_relay
+                                        Action        Trigger
+                                }
+                        }        
+                }
+				WaveSpawn
+                {
+                        Name        3Asmall
+                        TotalCurrency        50
+                        TotalCount	12
+						MaxActive	5
+                        SpawnCount	1
+                        Where        spawnbot
+                        WaitBetweenSpawns	1
+                        TFBot
+						{
+							Template	T_TFBot_Bleed_on_hit_bow_rapid
+						}
+                }
+				WaveSpawn
+                {
+                        Name        3Asmall
+                        TotalCurrency        50
+                        TotalCount	15
+						MaxActive	5
+                        SpawnCount	1
+                        Where        Flankers
+                        WaitBetweenSpawns	1
+                        TFBot
+						{
+							Template	T_TFBot_Bleed_on_hit_bow_rapid
+						}
+                }
+				WaveSpawn
+                {
+                        Name        3Asmall
+                        TotalCurrency        50
+                        TotalCount	10
+						MaxActive	4
+                        SpawnCount	1
+                        Where        Flankers
+                        WaitBetweenSpawns	1
+                        TFBot
+						{
+							Template	T_TFBot_Pyro_Fire_Spreader
+							ClassIcon	PyRo
+						}
+                }
+				WaveSpawn
+                {
+                        Name        3Asmall
+                        TotalCurrency        50
+                        TotalCount	10
+						MaxActive	4
+                        SpawnCount	1
+                        Where        spawnbot
+                        WaitBetweenSpawns	1
+                        TFBot
+						{
+							Template	T_TFBot_Pyro_Fire_Spreader
+							ClassIcon	PyRo
+						}
+                }
+				WaveSpawn
+                {
+                        Name        3Agiant
+                        TotalCurrency        100
+                        TotalCount        2
+                        MaxActive        2
+                        SpawnCount        2
+                        Where        spawnbot
+                        WaitBeforeSpawns        45
+                        Squad
+						{
+							TFBot
+							{
+								Template	T_TFBot_Soldier_BurstFire
+							}
+							TFBot
+							{
+								Template	T_TFBot_Giant_Medic
+							}
+						}
+				}
+                WaveSpawn
+                {
+                        Name        3B
+						WaitForAllDead	3A
+                        TotalCurrency        100
+                        TotalCount        1
+                        MaxActive        1
+                        SpawnCount        1
+                        Where        spawnbot
+                        WaitBetweenSpawns        45
+                        TFBot
+                        {
+                                Class        Heavy
+                                Name        "Super Ice Burner Heavy"
+                                ClassIcon heavy_heateR
+                                Skill Expert
+                                Health 5500
+                                Scale        1.85
+                                Attributes        MiniBoss
+                                Item "The Huo Long Heatmaker"
+                                ItemAttributes
+                                {
+                                        ItemName "The Huo Long Heatmaker"
+                                        "ring of fire while aiming" 25
+                                        "damage bonus vs burning" 2
+                                        "damage penalty"        0.7
+                                }
+                                CharacterAttributes
+                                {
+                                        "move speed penalty"        0.5
+                                        "damage force reduction" 0.4
+                                        "airblast vulnerability multiplier" 0.1
+                                        "override footstep sound set" 3
+                                        "airblast vertical vulnerability multiplier" 0.5
+                                }
+                        }
+                }
+                WaveSpawn
+                {
+                        Name        3B
+						WaitForAllDead	3A
+                        TotalCurrency      100
+                        TotalCount        1
+                        MaxActive        1
+                        SpawnCount        1
+                        Where        flankers
+						WaitBeforeStarting	15
+                        WaitBetweenSpawns        45
+                        TFBot
+                        {
+                                Class        Heavy
+                                Name        "Super Ice Burner Heavy"
+                                ClassIcon heavy_heateR
+                                Skill Expert
+                                Health 5500
+                                Scale        1.85
+                                Attributes        MiniBoss
+                                Item "The Huo Long Heatmaker"
+                                ItemAttributes
+                                {
+                                        ItemName "The Huo Long Heatmaker"
+                                        "ring of fire while aiming" 25
+                                        "damage bonus vs burning" 2
+                                        "damage penalty"        0.7
+                                }
+                                CharacterAttributes
+                                {
+                                        "move speed penalty"        0.5
+                                        "damage force reduction" 0.4
+                                        "airblast vulnerability multiplier" 0.1
+                                        "override footstep sound set" 3
+                                        "airblast vertical vulnerability multiplier" 0.5
+                                }
+                        }
+                }
+                WaveSpawn
+                {
+                        Name        INFSUPPORT
+						WaitForAllDead        3Agiant
+                        TotalCurrency        30
+                        MaxActive        2
+                        SpawnCount        1
+                        Where        spawnbot
+                        WaitBetweenSpawns        4
+                        WaitBeforeStarting        8
+                        Support 1
+                        TFBot
+                        {
+                                Template T_TFBot_Pyro
+                                Attributes        AlwaysFireWeapon
+                                Name        "Igniter"
+                                Health        155
+                                Scale        0.8
+                                CharacterAttributes
+                                {
+                                        "move speed bonus"        1.15
+                                }
+                        }
+                }
+                WaveSpawn
+                {
+                        Name        INFSUPPORT
+						WaitForAllDead        3Agiant
+                        TotalCurrency        30
+                        MaxActive        2
+                        SpawnCount        1
+                        Where        flankers
+                        WaitBetweenSpawns        6
+                        WaitBeforeStarting        8
+                        Support 1
+                        TFBot
+                        {
+                                Class        Soldier
+                                Name        "Alien Tech Soldier"
+                                Item        "the cow mangler 5000"
+                                ClassIcon        soldier_mangler
+                                ItemAttributes
+                                {
+                                        ItemName        "the cow mangler 5000"
+                                        "Set DamageType Ignite"        1
+                                }
+                        }
+                }
+                WaveSpawn
+                {
+                        Name        INFSUPPORT
+						WaitForAllDead        3Agiant
+                        TotalCurrency        30
+                        MaxActive        2
+                        SpawnCount        2
+                        Where        spawnbot
+                        WaitBetweenSpawns        5
+                        WaitBeforeStarting        8
+                        Support 1
+                        TFBot
+                        {
+                                Template        T_TFBot_ScorchShot_FastShot
+                                ClassIcon        pyro_scorch
+                        }
+                }
+                WaveSpawn
+                {
+                        Name        INFSUPPORT
+						WaitForAllDead        3B
+                        TotalCurrency        30
+                        MaxActive        2
+                        SpawnCount        1
+                        Where        spawnbot
+                        WaitBetweenSpawns        1
+                        WaitBeforeStarting        1
+                        Support 1
+                        TFBot
+                        {
+                                Template        T_TFBot_Pyro_Flaregun
+                                ItemAttributes
+                                {
+                                        ItemName        "The Flare Gun"
+                                        "faster reload rate"        0.65
+                                        "damage penalty"        0.5
+                                }
+                        }
+                }
+                WaveSpawn
+                {
+                        Name        INFSUPPORT
+						WaitForAllDead        3B
+                        TotalCurrency        30
+                        MaxActive        1
+                        SpawnCount        1
+                        Where        flankers
+                        WaitBetweenSpawns        7
+                        WaitBeforeStarting        1
+                        Support 1
+                        TFBot
+                        {
+                                Class        Heavy
+                                ClassIcon heavy_heater
+                                Name        "Fire Starter Heavy"
+                                Skill Hard
+                                Item "The Huo Long Heatmaker"
+                                ItemAttributes
+                                {
+                                        ItemName "The Huo Long Heatmaker"
+                                        "damage penalty"        0.1
+										"fire rate bonus" 5
+                                        "damage bonus vs burning" 1.5
+                                        "Set DamageType Ignite"        1
+                                }
+                        }
+                }
+                WaveSpawn
+                {
+                        Name        Boss
+                        WaitForAllDead        3B
+                        TotalCurrency        400
+                        TotalCount        1
+                        SpawnCount        1
+                        Where        spawnbot
+                        WaitBeforeStarting        5
+                        TFBot
+                        {
+                                Class        Heavy
+                                ClassIcon        heavy_heateR
+                                Name        "Hephaestus"
+                                Skill        Expert
+                                Health 35000
+                                Scale        1.9
+                                Attributes        MiniBoss
+                                Item "The Huo Long Heatmaker"
+                                Attributes        UseBossHealthBar
+                                Item "The Unshaved Bear"
+                                Item "Big Chief"
+                                ItemAttributes
+                                {
+                                        ItemName "The Huo Long Heatmaker"
+                                        "damage bonus vs burning" 2.25
+                                        "fire rate penalty" 2.5
+                                        "attack_minicrits_and_consumes_burning" 1
+                                }
+                                CharacterAttributes
+                                {
+                                        "move speed bonus"        0.4
+                                        "damage force reduction" 0.4
+                                        "airblast vulnerability multiplier" 0.0
+                                        "override footstep sound set" 3
+                                        "airblast vertical vulnerability multiplier" 0.0
+                                        "rage giving scale" 0.1
+                                }
+                        }
+                }
+        }

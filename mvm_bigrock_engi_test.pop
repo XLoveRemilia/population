@@ -1,0 +1,94 @@
+#base robot_giant.pop
+#base robot_standard.pop
+population
+{
+	StartingCurrency	600
+	RespawnWaveTime	6
+	CanBotsAttackWhileInSpawnRoom	no
+	Advanced	1
+	Wave	//800+100
+	{
+		WaitWhenDone	65
+		Checkpoint	Yes
+		StartWaveOutput
+		{
+			Target	wave_start_relay
+			Action	Trigger
+		}
+		DoneOutput
+		{
+			Target	wave_finished_relay
+			Action	Trigger
+		}
+		WaveSpawn
+		{
+			Name	1A
+			TotalCurrency	100
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			TFBot
+			{
+				Class Scout
+			}
+
+		}
+		WaveSpawn
+		{
+			Name	1B
+			WaitForAllDead	1A
+			TotalCurrency	50
+			Objective	Engineer
+			TotalCount	7
+			MaxActive	7
+			SpawnCount	7
+			Where	spawnbot
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	7
+			FirstSpawnWarningSound "vo\announcer_mvm_engbots_arrive01.mp3"
+			Support Limited
+			TFBot
+			{
+				Template	T_TFBot_Engineer_Sentry_Battle_TeleIn
+			}
+		}
+		WaveSpawn
+		{
+			Name	1C
+			WaitForAllDead	1B
+			TotalCurrency	70
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	0
+			WaitBetweenSpawns	100000
+			FirstSpawnWarningSound "vo\announcer_mvm_engbots_dead_notele02.mp3"
+			Support 1
+			TFBot
+			{
+				Class Sniper
+				ClassIcon Sniper
+			}
+		}
+		WaveSpawn
+		{
+			Name	1d
+			TotalCurrency	100
+			TotalCount	1
+			MaxActive	1
+			SpawnCount	1
+			Where	spawnbot
+			WaitBeforeStarting	10000
+			WaitBetweenSpawns	7
+			TFBot
+			{
+				Class Scout
+			}
+
+		}
+	}
+}
